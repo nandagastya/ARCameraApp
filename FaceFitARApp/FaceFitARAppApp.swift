@@ -6,16 +6,29 @@
 //
 
 import SwiftUI
-import CoreData
+import FirebaseCore
 
 @main
-struct FaceFitARAppApp: App {
-    let persistenceController = PersistenceController.shared
-
+struct FaceFitARApp: App {
+    
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    @StateObject private var authViewModel = AuthViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            RootView()
+                .environmentObject(authViewModel)
+                .preferredColorScheme(.dark)
         }
+    }
+}
+
+class AppDelegate: NSObject, UIApplicationDelegate {
+    func application(
+        _ application: UIApplication,
+        didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil
+    ) -> Bool {
+        FirebaseApp.configure()
+        return true
     }
 }

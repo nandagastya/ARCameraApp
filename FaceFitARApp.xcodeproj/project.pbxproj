@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		0D02517D2F59AA7600EB6E3E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 0D02517C2F59AA7600EB6E3E /* FirebaseAuth */; };
+		0D02517F2F59AA7600EB6E3E /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 0D02517E2F59AA7600EB6E3E /* FirebaseFirestore */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		0D02515E2F599F2000EB6E3E /* FaceFitARApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceFitARApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -23,6 +28,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D02517D2F59AA7600EB6E3E /* FirebaseAuth in Frameworks */,
+				0D02517F2F59AA7600EB6E3E /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +72,8 @@
 			);
 			name = FaceFitARApp;
 			packageProductDependencies = (
+				0D02517C2F59AA7600EB6E3E /* FirebaseAuth */,
+				0D02517E2F59AA7600EB6E3E /* FirebaseFirestore */,
 			);
 			productName = FaceFitARApp;
 			productReference = 0D02515E2F599F2000EB6E3E /* FaceFitARApp.app */;
@@ -94,6 +103,9 @@
 			);
 			mainGroup = 0D0251552F599F2000EB6E3E;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				0D02517B2F59AA7600EB6E3E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 0D02515F2F599F2000EB6E3E /* Products */;
 			projectDirPath = "";
@@ -256,6 +268,8 @@
 				DEVELOPMENT_TEAM = 44MD22A3P7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "FaceFit AR needs camera access to detect your face and apply filters";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Save your filtered photos to your library";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -288,6 +302,8 @@
 				DEVELOPMENT_TEAM = 44MD22A3P7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "FaceFit AR needs camera access to detect your face and apply filters";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Save your filtered photos to your library";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -332,6 +348,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0D02517B2F59AA7600EB6E3E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.10.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0D02517C2F59AA7600EB6E3E /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0D02517B2F59AA7600EB6E3E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		0D02517E2F59AA7600EB6E3E /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0D02517B2F59AA7600EB6E3E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0D0251562F599F2000EB6E3E /* Project object */;
 }
